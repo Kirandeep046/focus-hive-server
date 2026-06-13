@@ -1,0 +1,507 @@
+.job-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 32px 28px 48px;
+  background: #f5f7fb;
+  min-height: 100vh;
+  font-family: Inter, Arial, sans-serif;
+  color: #111827;
+}
+
+.header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 30px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e6e8f0;
+}
+
+.header-row h2 {
+  margin: 0;
+  font-size: clamp(2rem, 2.5vw, 2.6rem);
+  line-height: 1.05;
+}
+
+.header-row p {
+  margin: 10px 0 0;
+  color: #4b5563;
+  font-size: 1rem;
+  max-width: 680px;
+}
+
+.route-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  background: #2563eb;
+  color: #fff;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.18);
+  font-weight: 600;
+}
+
+.top-panel,
+.filters-row,
+.upload-panel,
+.bottom-panels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 14px 42px rgba(15, 23, 42, 0.06);
+}
+
+.highlight-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.card h3 {
+  margin: 0 0 14px;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+
+.card p {
+  margin: 8px 0;
+  color: #4b5563;
+  line-height: 1.65;
+}
+
+.alert-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.alert-badges span {
+  background: #eef2ff;
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: #1d4ed8;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.notify-btn,
+.save-btn,
+.remove-btn {
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  padding: 12px 18px;
+  font-weight: 600;
+}
+
+.notify-btn {
+  background: #2563eb;
+  color: #fff;
+}
+
+.save-btn {
+  background: #ef4444;
+  color: #fff;
+}
+
+.remove-btn {
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #111827;
+}
+
+.filters-row .filter-card,
+.upload-panel .resume-card,
+.upload-panel .advisor-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filters-row label,
+.upload-panel label,
+.salary-card label {
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+.filter-card input,
+.filter-card select,
+.upload-panel input,
+.advisor-card input,
+.salary-card input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid #dde5ef;
+  background: #f8fafc;
+  color: #0f172a;
+  font-size: 0.98rem;
+}
+
+.upload-panel input[type="file"] {
+  height: auto;
+}
+
+.trending-skills {
+  margin-bottom: 20px;
+}
+
+.trending-skills h3 {
+  margin-bottom: 14px;
+}
+
+.trending-skills div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.trending-skills span {
+  background: #f8fafc;
+  padding: 10px 16px;
+  border-radius: 999px;
+  color: #1e293b;
+  font-size: 0.95rem;
+  border: 1px solid #e2e8f0;
+}
+
+.job-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 22px;
+}
+
+.job-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+  padding: 24px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 50px rgba(15, 23, 42, 0.09);
+}
+
+.job-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.job-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+}
+
+.job-card p {
+  margin: 4px 0;
+}
+
+.job-meta {
+  color: #64748b;
+  margin-bottom: 18px;
+}
+
+.status-pill {
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.status-open {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.status-interview-scheduled {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-applied {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+.status-selected {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.match-bar {
+  margin-bottom: 18px;
+}
+
+.match-label {
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.progress {
+  height: 14px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2563eb, #4f46e5);
+}
+
+.portal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.portal-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  background: #eff6ff;
+  border-radius: 999px;
+  color: #1d4ed8;
+  text-decoration: none;
+  font-size: 0.95rem;
+  border: 1px solid #dbeafe;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.skills-list span {
+  background: #f8fafc;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  border: 1px solid #e2e8f0;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.salary {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.interview-section p {
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+
+.interview-links {
+  display: grid;
+  gap: 10px;
+}
+
+.interview-links a {
+  display: inline-block;
+  color: #2563eb;
+  text-decoration: none;
+  border: 1px solid #dbeafe;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: #f8fbff;
+}
+
+.saved-section {
+  margin-top: 34px;
+}
+
+.saved-section h3 {
+  margin-bottom: 18px;
+  font-size: 1.15rem;
+}
+
+.saved-job-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 18px 20px;
+  margin-bottom: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.extracted-skills {
+  margin-top: 12px;
+  color: #334155;
+  font-weight: 600;
+}
+
+.bottom-panels {
+  margin-top: 18px;
+}
+
+.salary-card input {
+  width: 100%;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 28px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #64748b;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.modal-body {
+  padding: 24px 28px;
+}
+
+.modal-section {
+  margin-bottom: 20px;
+}
+
+.modal-section h3 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+}
+
+.modal-section h4 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.modal-section label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.modal-section p {
+  margin: 4px 0;
+  color: #64748b;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 20px 28px;
+  border-top: 1px solid #e5e7eb;
+  background: #f8fafc;
+}
+
+.modal-footer button {
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+@media (max-width: 900px) {
+  .header-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 720px) {
+  .top-panel,
+  .filters-row,
+  .upload-panel,
+  .bottom-panels {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Inter', "Segoe UI", sans-serif;
+}
+
+.dashboard-page {
+  background: #f1f5f9;
+  min-height: 100vh;
+}
+
+/* ── LAYOUT ── */
+.dashboard {
+  padding: 32px 36px 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: #f1f5f9;
+}
+
+/* ── BASE CARD ── */
+.card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  color: #1e293b;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(99, 102, 241, 0.1);
+}
+
+.card h2 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card p,
+.card li {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.card strong {
+  color: #4f46e5;
+}
+
+/* ── TOP NAV CARDS ── */
+.cards {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+.cards a,
+.cards .card {
+  text-decoration: none;
+  padding: 20px 16px;
+  border-radius: 16px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  color: #0f172a;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.cards a:hover,
+.cards .card:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  border-color: transparent;
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.25);
+}
+
+/* ── PROGRESS BAR ── */
+.progress-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.progress-stats {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.progress-fraction {
+  font-size: 40px;
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.progress-fraction small {
+  font-size: 18px;
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+.progress-label {
+  font-size: 13px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #f1f5f9;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-bar div {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #a78bfa);
+  border-radius: 999px;
+  transition: width 0.5s ease;
+}
+
+.progress-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress-pct {
+  font-size: 13px;
+  font-weight: 700;
+  color: #6366f1;
+}
+
+.progress-remaining {
+  font-size: 12px;
+  font-weight: 600;
+  color: #94a3b8;
+  background: #f1f5f9;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+/* ── BUTTONS ── */
+.dashboard button {
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%) !important;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.dashboard button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.3);
+}
+
+/* ── POMODORO ── */
+.pomodoro-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+/* ── TABS ── */
+.tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.tabs button {
+  background: #f8fafc !important;
+  color: #475569 !important;
+  border: 1px solid #e2e8f0 !important;
+  padding: 7px 14px !important;
+  font-size: 13px !important;
+  box-shadow: none !important;
+}
+
+.tabs button.active {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+
+.tabs button:hover:not(.active) {
+  background: #eef2ff !important;
+  color: #4f46e5 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* ── STREAK CARD ── */
+.dashboard .streak-card {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 60%, #4338ca 100%) !important;
+  border-color: transparent !important;
+  text-align: center;
+}
+
+.dashboard .streak-card h1 {
+  font-size: 56px !important;
+  font-weight: 900 !important;
+  color: #ffffff !important;
+  margin: 8px 0 4px !important;
+  line-height: 1;
+}
+
+.dashboard .streak-card h2,
+.dashboard .streak-card span {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.streak-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff !important;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ── TODAY'S GOALS ── */
+.todays-goal-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.todays-goal-card li {
+  cursor: pointer;
+  padding: 12px 14px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.todays-goal-card li:hover {
+  background: #eef2ff;
+  border-color: #c7d2fe;
+  color: #4338ca;
+}
+
+.todays-goal-card li span {
+  font-size: 18px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ── NOTES CARD ── */
+.notes-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.notes-card input {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1.5px solid #e2e8f0;
+  background: #f8fafc;
+  font-family: inherit;
+  font-size: 14px;
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.notes-card input:focus {
+  border-color: #6366f1;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.08);
+}
+
+.notes-card button {
+  width: fit-content;
+}
+
+.file-name {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* ── SUBJECTS CARD ── */
+.subjects-loading,
+.subjects-empty {
+  font-size: 14px;
+  color: #94a3b8;
+  text-align: center;
+  padding: 12px 0;
+}
+
+.subject-chapters-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chapter-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  font-size: 13px;
+  font-weight: 500;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.chapter-item:hover {
+  background: #eef2ff;
+  border-color: #c7d2fe;
+  color: #4338ca;
+}
+
+.ch-num {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.free-tag {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 700;
+  color: #16a34a;
+  background: #dcfce7;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.no-chapters {
+  font-size: 13px;
+  color: #94a3b8;
+  padding: 8px 0;
+}
+
+.view-all-chapters {
+  font-size: 13px;
+  font-weight: 700;
+  color: #6366f1;
+  cursor: pointer;
+  padding: 8px 12px;
+  text-align: center;
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+
+.view-all-chapters:hover {
+  background: #eef2ff;
+}
+
+/* ── INPUTS GLOBAL ── */
+textarea,
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1.5px solid #e2e8f0;
+  background: #f8fafc;
+  font-family: inherit;
+  font-size: 14px;
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border-color: #6366f1;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.08);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 20px 16px 40px;
+    gap: 16px;
+  }
+
+  .card {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,147 @@
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(37, 99, 235, 0.22), transparent 30%),
+    radial-gradient(circle at 84% 74%, rgba(20, 184, 166, 0.18), transparent 34%),
+    linear-gradient(135deg, #eef4ff 0%, #f8fafc 48%, #e8f7f4 100%);
+  color: #111827;
+}
+
+.login-card {
+  position: relative;
+  overflow: hidden;
+  width: min(100%, 440px);
+  display: grid;
+  gap: 18px;
+  padding: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.44);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(248, 250, 252, 0.94)),
+    #ffffff;
+  box-shadow: 0 28px 80px rgba(2, 6, 23, 0.34);
+  backdrop-filter: blur(14px);
+}
+
+.login-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 6px;
+  background: linear-gradient(90deg, #2563eb, #0891b2, #14b8a6);
+}
+
+.login-card::after {
+  content: "FH";
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.login-card h1 {
+  position: relative;
+  margin: 0;
+  padding-right: 56px;
+  font-size: 38px;
+  line-height: 1.1;
+  letter-spacing: 0;
+  color: #0f172a;
+}
+
+.login-card p {
+  position: relative;
+  margin: -6px 0 8px;
+  padding-right: 26px;
+  color: #475569;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.login-card label {
+  position: relative;
+  display: grid;
+  gap: 8px;
+  color: #1d4ed8;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.login-card input {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 15px;
+  border: 1px solid #d6deea;
+  border-radius: 8px;
+  background: #f8fafc;
+  color: #0f172a;
+  font: inherit;
+  font-weight: 700;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-card input::placeholder {
+  color: #7c8da5;
+  font-weight: 600;
+}
+
+.login-card input:focus {
+  border-color: #2563eb;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.login-card label:focus-within {
+  color: #0e7490;
+}
+
+.login-card button {
+  position: relative;
+  min-height: 52px;
+  margin-top: 10px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2563eb, #0891b2);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 16px 34px rgba(37, 99, 235, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.login-card button:hover {
+  background: linear-gradient(135deg, #1d4ed8, #0e7490);
+  box-shadow: 0 18px 38px rgba(37, 99, 235, 0.36);
+  transform: translateY(-1px);
+}
+
+.login-card button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 520px) {
+  .login-page {
+    padding: 18px;
+  }
+
+  .login-card {
+    padding: 24px;
+  }
+
+  .login-card h1 {
+    font-size: 31px;
+  }
+}

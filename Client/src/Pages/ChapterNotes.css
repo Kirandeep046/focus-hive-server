@@ -1,0 +1,178 @@
+.chapter-page {
+  min-height: 100vh;
+  padding: 70px 8%;
+  color: #172033;
+  background:
+    radial-gradient(circle at top left, rgba(14, 165, 233, 0.16), transparent 30%),
+    linear-gradient(135deg, #eef7ff 0%, #f8fbff 52%, #eef2ff 100%);
+}
+
+.chapter-header {
+  width: min(980px, 100%);
+  margin: 0 auto 28px;
+}
+
+.chapter-page h1 {
+  margin: 0 0 10px;
+  color: #0369a1;
+  font-size: 40px;
+  font-weight: 850;
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.chapter-page h2 {
+  margin: 0;
+  color: #5b21b6;
+  font-size: 28px;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.chapter-notes-layout {
+  display: grid;
+  width: min(980px, 100%);
+  margin: 0 auto;
+  gap: 18px;
+}
+
+.notes-box {
+  padding: 24px;
+  border: 1px solid #d9e6f6;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.09);
+}
+
+.notes-box h3 {
+  margin: 0 0 12px;
+  color: #0f172a;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.notes-box h4 {
+  margin: 18px 0 8px;
+  color: #075985;
+  font-size: 17px;
+}
+
+.notes-box p {
+  margin: 0;
+  color: #475569;
+  font-size: 16px;
+  line-height: 1.75;
+  white-space: pre-wrap;
+}
+
+.notes-box.empty {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  color: #64748b;
+  text-align: center;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .chapter-page {
+    padding: 46px 18px;
+  }
+
+  .chapter-page h1 {
+    font-size: 32px;
+  }
+
+  .chapter-page h2 {
+    font-size: 22px;
+  }
+
+  .notes-box {
+    padding: 18px;
+  }
+}
+
+/* PDF Modal Viewer for ChapterNotes */
+.pdf-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.2s ease-out;
+}
+
+.pdf-modal-container {
+  width: 90vw;
+  max-width: 1000px;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  animation: scaleUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.pdf-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 28px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.pdf-modal-header h3 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.close-modal-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #64748b;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-modal-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.pdf-modal-body {
+  flex-grow: 1;
+  padding: 16px;
+  background: #f1f5f9;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .pdf-modal-container {
+    width: 95vw;
+    height: 90vh;
+  }
+}
