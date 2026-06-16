@@ -34,19 +34,17 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 
-// 🔥 FIXED: DB connect FIRST then server start
-const startServer = async () => {
-  try {
-    await mongoose.connect(process.env.MONGO_URI);
-    console.log("MongoDB Connected ✅");
+// Connect to MongoDB
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB Connected ✅"))
+  .catch((err) => console.log("MongoDB Connection Error ❌", err));
 
-    app.listen(PORT, () => {
-      console.log(`Server running on ${PORT}`);
-    });
+// Start server locally if not in a Vercel environment
+if (process.env.NODE_ENV !== "production") {
+  app.listen(PORT, () => {
+    console.log(`Server running on ${PORT}`);
+  });
+}
 
-  } catch (err) {
-    console.log("MongoDB Connection Error ❌", err);
-  }
-};
-
-startServer();
+// Export for Vercel serverless
+export default app;
