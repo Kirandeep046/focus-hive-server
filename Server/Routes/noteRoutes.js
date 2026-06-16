@@ -3,7 +3,7 @@ import { v2 as cloudinary } from "cloudinary";
 import Note from "../Models/Note.js";
 import Subject from "../Models/Subject.js";
 import StudyContent from "../Models/StudyContent.js";
-import upload from "../middleware/upload.js";
+import upload from "../Middleware/upload.js";
 
 const router = express.Router();
 
