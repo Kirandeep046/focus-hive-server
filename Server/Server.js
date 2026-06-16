@@ -39,8 +39,9 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected ✅"))
   .catch((err) => console.log("MongoDB Connection Error ❌", err));
 
-// Start server locally if not in a Vercel environment
-if (process.env.NODE_ENV !== "production") {
+// Start server if not running in a Vercel serverless environment
+// (Render and local development will both run this block)
+if (!process.env.VERCEL) {
   app.listen(PORT, () => {
     console.log(`Server running on ${PORT}`);
   });
