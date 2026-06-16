@@ -16,7 +16,7 @@ import Signup from "./Pages/Signup";
 import TodaysGoalDetails from "./Components/TodaysGoalDetails";
 import AdminPanel from "./Pages/AdminPanel";
 import NotesPage from "./Pages/NotesPage";
-import ChapterNotes from "./Pages/ChapterNotes";
+// import ChapterNotes from "./Pages/ChapterNotes";
 import Plans from "./Pages/Plans";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";

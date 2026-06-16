@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import TodaysGoalDetails from "../components/TodaysGoalDetails";
+import TodaysGoalDetails from "../Components/TodaysGoalDetails";
 import FocusTimer from "./FocusTimer";
 import api from "../Services/api";
 import "./Dashboard.css";

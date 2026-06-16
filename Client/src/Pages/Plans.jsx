@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Plans.css";
-import UpiPaymentScanner from "../components/UpiPaymentScanner";
+import UpiPaymentScanner from "../Components/UpiPaymentScanner";
 
 const plans = [
   {
